@@ -10,4 +10,5 @@ Meus estudos no Bootcamp Ada coders - 2024
 [comment]:<> (Módulos)
 [![Engenharia vs ciência de dados](img/engenharia.png)](EngenhariaVsCienciaDeDados.md)
 [![git versionamento](img/git.png)](VersionamentoDeCodigo.md)
+[![git versionamento](img/docker.png)](conteinerizaçãoComDocker.md)
 
