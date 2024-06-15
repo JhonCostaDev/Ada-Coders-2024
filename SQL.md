@@ -523,3 +523,166 @@ EXPLAIN (COSTS FALSE) SELECT * FROM study.aluno_ada WHERE id = '3'; --não mostr
 
 EXPLAIN SELECT MAX(id) FROM study.aluno_ada WHERE id = '2';
 ```
+
+## COMANDOS DE DCL (GRANT, REVOKE)
+
+```SQL
+--GRANT PRIVILÉGIOS
+GRANT privilege_list ALL ON nome_tabela to role_name;
+
+--criar novo usuário
+
+CREATE ROLE jhon LOGIN PASSWORD '123';
+
+CREATE TABLE filmes (
+	id INT SERIAL PRIMARY KEY,
+	nome VARCHAR(100),
+	categoria VARCHAR(100),
+	lingua VARCHAR(100)
+);
+
+--dando permissão
+GRANT SELECT ON filmes TO jhon;
+
+
+INSERT INTO filmes (nome, categoria, lingua) VALUES ('titanic','romance','english',);
+
+-- PERMITIR QUE O USUÁRIO INSIRA INFORMAÇÕES
+GRANT INSERT, UPDATE, DELETE ON filmes TO jhon;
+
+
+--revogando acessos
+REVOKE SELECT ON filmes FROM jhon;
+```
+
+## COMANDOS DQL(SELECT, SUBQUERYS, CTES)
+```sql
+CREATE TABLE study.pedidos(
+	id SERIAL PRIMARY KEY,
+	nome_prato VARCHAR(255) NOT NULL,
+	preco_prato INT NOT NULL,
+	data_pedido DATE
+);
+
+INSERT INTO study.pedidos (data_pedido, preco_prato, nome) VALUES ('01-12-2024', '25', 'arroz');
+
+INSERT INTO study.pedidos (data_pedido, preco_prato, nome) VALUES ('01-18-2024', '29', 'ovos');
+
+INSERT INTO study.pedidos (data_pedido, preco_prato, nome) VALUES ('11-12-2024', '50', 'panqueca');
+
+
+--sumarizando as buscas e resultados
+
+--exibindo as informações ordenadas e a soma de uma coluna
+
+SELECT
+EXTRACT (MONTH FROM data_pedido) as mes,
+EXTRACT (YEAR FROM data_pedido) AS ano,
+SUM (preco_prato) AS total_vendas 
+FROM study.pedidos
+GROUP BY EXTRACT(MONTH FROM data_pedido),
+EXTRACT(YEAR FROM data_pedido)
+ORDER BY ano, mes;
+
+--Utilizando ctes
+-- mesmo resultado do comando acima mais utilizando ctes(função)
+WITH vendas_por_mes AS (
+SELECT
+	DATE_PART('MONTH', data_pedido) as mes,
+	DATE_PART('YEAR', data_pedido) as ano,
+	SUM(preco_prato) AS total_vendas
+
+	FROM study.pedidos
+	GROUP BY ano, mes
+)
+
+SELECT mes, ano, total_vendas FROM vendas_por_mes
+ORDER BY ano, mes;
+
+
+--CTES ANINHADAS
+
+WITH departamentos(id, nome) AS (
+	SELECT 
+	departamentos.id,
+	departamentos.nome, 
+	FROM departamento
+), 
+	colaboradores (id, nome, id_depto) AS (
+		SELECT
+		colaborador.id,
+		colaborador.nome,
+		colaborador.id_depto
+		FROM colaborador
+		JOIN departamentos ON colaborador.id_depto = departamentos.id
+	),
+	vendas AS (id_colaborador, vendas_total) AS
+	(SELECT pedidos.id_colaborador, 
+	SUM(preco_total) 
+	FROM pedidos1
+	JOIN colaboradores ON pedidos1.id_colaborador = colaboradores.id
+	GROUP BY pedidos1.id_colaborador
+	)
+
+	SELECT nome, venda_total 
+	FROM vendas
+	JOIN colaborores ON vendas.id_colaborador = colaboradores.id;
+
+
+--SUBQUERRYS - UMA QUERRY DENTRO DA OUTRA
+
+SELECT first_name, last_name, salary
+FROM employes
+WHERE salary > (--sub querry
+	SELECT MAX(salary) FROM employees
+	WHERE first_name = 'Maria'
+);
+```
+
+## STORE PROCEDURES
+Procedimento armazenado ou Stored Procedure é uma coleção de comandos em SQL, que podem ser executadas em um Banco de dados de uma só vez, como em uma função.
+
+```sql
+--procedures
+
+--CRIANDO UMA NOVA TABLEA
+CREATE TABLE contas (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(100),
+	saldo DEC(15,2) NOT NULL
+);
+
+--INSERINDO DADOS NESSA TABELA
+INSERT INTO contas(nome, saldo)
+VALUES('CAROL', '1000');
+
+INSERT INTO contas(nome, saldo)
+VALUES('PEDRO', '1020');
+
+INSERT INTO contas(nome, saldo)
+VALUES('MARCIA', '1200');
+
+--TRANSFERENCIA
+CREATE OR REPLACE PROCEDURE transferencia (
+	enviado INT,
+	recebe INT,
+	quantidade DEC
+)
+LANGUAGE plpgsql AS $$ BEGIN
+
+--SUBTRAIR A QUANTIDADE DA CONTA DE QUEM ENVIA
+
+UPDATE contas SET saldo = saldo - quantidade 
+WHERE id = enviado;
+
+-- ADICIONANDO A QUANTIDADE NA CONTA DE QUEM RECEBE
+UPDATE contas SET saldo + quantidade
+WHERE id = recebe;
+
+COMMIT;
+END;$$
+
+CALL transferencia(1,2,200)
+
+
+```
