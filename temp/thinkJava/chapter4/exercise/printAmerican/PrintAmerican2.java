@@ -1,5 +1,6 @@
 /*
-Write a method called printAmerican that takes the day, date, month and year as parameters
+Write a method called printAmerican that takes the day, date, month 
+and year as parameters
 and displays them in american format.
 */
 
