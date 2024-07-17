@@ -20,6 +20,7 @@ TODO: FaZER COM ESTÁ DESCRITO...
 
 Imagine que você está implementando um sistema para verificar se os alunos de uma turma estudantil passaram na disciplina ou não. Para isso solicite que o usuário insira as notas das 4 provas realizadas por um estudante e calcule a média. Após isso, emita uma resposta booleana (True ou False) se o estudante passou na disciplina pensando que a média mínima para aprovação é que seja pelo menos 5.
 
+
 Crie um algoritmo que calcule o IMC (índice de massa corporal). O IMC é calculado com a formula PESO/(ALTURA ^ 2). Para isso, coloque as informações nas variáveis e ao final apresente o resultado como no exemplo: "O IMC é 18"
 
 Escreva um algoritmo que calcule (x + y) * (x + y). Os valores de x e y devem ser inseridos pelo usuário
