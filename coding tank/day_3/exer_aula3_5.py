@@ -6,7 +6,7 @@ b. Salário: maior que 0
 c. Gênero: M, F ou Outro
 
 '''
-print("Entrada de dados")
+print("====== Entrada de dados ======")
 
 idade = int(input("Digite sua idade\n"))
 while idade < 0 or idade > 150:
@@ -18,13 +18,12 @@ salario = float(input("Digite seu salário: \n"))
 while salario < 0:
     print("Salário Inválido, digite um valor acima de 0")
     salario = float(input("Digite seu salário: \n"))
-print("Salário: ",salario)
 
 genero = input("Digite seu Gênero: (M)masculino, (F)feminino (Outro)outros\n").upper()
 while genero != 'M' and genero != 'F' and genero != "OUTRO":
     print("Gênero inválido - Digite M para masculino, F para feminino e outro para outras classificações de gênero.")
     genero = input("Digite seu Gênero: (M)masculino, (F)feminino (Outro)outros\n").upper()
-print('''
+print(f'''
     IDADE: {idade}
     SALÁRIO: R$ {salario}
     GÊNERO: {genero}
