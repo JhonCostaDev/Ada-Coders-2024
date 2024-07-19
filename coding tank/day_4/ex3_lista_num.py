@@ -3,4 +3,4 @@
 n = int(input("Digite um número inteiro\n"))
 
 for i in range(n):
-    print(i, end=",")
+    print(i, end=" ,")

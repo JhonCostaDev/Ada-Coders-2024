@@ -9,6 +9,8 @@ lista_soma = []
 if len(Lista_a) == len(Lista_b):
     for i in range(len(Lista_a)):
         lista_soma.append(Lista_a[i] + Lista_b[i])
+else:
+    print("Lista de tamanhos diferentes.")
         
 for item in lista_soma:
     print(item, end=", ")

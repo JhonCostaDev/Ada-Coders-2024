@@ -11,6 +11,6 @@ while i < 3:
     i += 1
 print("Os três maiores itens da lista são: ", end="")
 for item in maiores:
-    print(item, end=" ")
+    print(item, end="-")
     
 print("")

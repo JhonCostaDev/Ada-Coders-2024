@@ -12,7 +12,7 @@ for item in lista:
         itens_pares +=1
         pares.append(item)
 
-print(f"Existem {itens_pares} na lista")
+print(f"Existem {itens_pares} itens pares na lista")
 print("Sendo eles: ")   
 for item in pares:
     print(item, end=" ")
