@@ -15,7 +15,7 @@ while idade < 0 or idade > 150:
     
 
 salario = float(input("Digite seu salário: \n"))
-while salario < 0:
+while salario <= 0:
     print("Salário Inválido, digite um valor acima de 0")
     salario = float(input("Digite seu salário: \n"))
 
@@ -28,4 +28,9 @@ print(f'''
     SALÁRIO: R$ {salario}
     GÊNERO: {genero}
       ''')
+
+''' SOLUÇÃO PROFESSOR
+
+
+'''
     

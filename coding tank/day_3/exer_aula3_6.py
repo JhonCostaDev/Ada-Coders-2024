@@ -27,6 +27,7 @@ while True:
         elif menu == '*':
             print(f"MULTIPLICAÇÃO: {numero_1} x {numero_2} = {numero_1 * numero_2}")
         elif menu == '/':
+            #TODO: tratar o número 0.
             print(f"DIVISÃO: {numero_1} / {numero_2} = {numero_1 / numero_2}")
         
         
