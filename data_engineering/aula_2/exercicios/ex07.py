@@ -3,35 +3,37 @@
 O programa deve armazenar o nome e um ou mais telefones do contato. 
 
 Em seguida, o usuário vai informar o nome de algum contato armazenado e o programa deve retornar os número(s) do contato caso queira pode utilizar o método .split()
-contatos = {
-    "Alice": "1234-5678",
-    "Bob": "2345-6789",
-    "Carlos": "3456-7890",
-    "Diana": "4567-8901",
-    "Eva": "5678-9012"
-}
 '''
-contatos = { #para testes
-    "Alice": "1234-5678",
-    "Bob": ["2345-6789", "2345-6789", "2345-6789", "2345-6789"],
-    "Carlos": "3456-7890",
-    "Diana": "4567-8901",
-    "Eva": "5678-9012"
+#
+contatos = { #Dicionário inicial para testes.
+    "alice": "1234-5678",
+    "bob": ["2345-6789", "2345-6789", "2345-6789", "2345-6789"],
+    "carlos": "3456-7890",
+    "diana": "4567-8901",
+    "eva": "5678-9012"
 }
 #=========================================================================
-agenda = {}
-print("==== AGENDA TELEFÔNICA ====")
+
 
 def menu():
+    print("         ===========================")
+    print("         ==== AGENDA TELEFÔNICA ====")
+    print("         ===========================")
    
     menu = input('''
-Escolha uma das opções abaixo:
-1 - Salvar Novo Contato
-2 - Buscar Contato
-3 - Exibir Todos os Contatos Salvos
-0 - SAIR   
+|=========================================|
+|   Escolha uma das opções abaixo:        |
+|-----------------------------------------|
+|   1 - Salvar Novo Contato               |
+|   2 - Buscar Contato                    |
+|   3 - Exibir Todos os Contatos Salvos   |
+|   0 - SAIR                              |
+|=========================================|   
 ''')
     return int(menu)
+
+
+
 def salvar_contato():
     
     telefones = []
