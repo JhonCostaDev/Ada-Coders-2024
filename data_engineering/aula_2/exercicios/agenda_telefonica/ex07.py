@@ -33,7 +33,7 @@ def menu():
     return int(menu)
 
 
-
+#TODO: nao aceitar numeros duplicados.
 def salvar_contato():
     
     telefones = []
@@ -59,7 +59,7 @@ def exibir_contatos(dicionario):
 
 
 
-opcao = menu();
+opcao = menu()
 while opcao != 0:
     if opcao == 1:
         chave, valor = salvar_contato()

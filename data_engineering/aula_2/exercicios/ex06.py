@@ -2,6 +2,8 @@
 
 caso queira pode utilizar o .split() e .replace()
 '''
+#TODO: quantidade de ocorrencias daquela palavra.
+
 def contador_palavras(frase):
     dicionario = {}
     lista = frase.split()
