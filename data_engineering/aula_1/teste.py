@@ -35,23 +35,27 @@ alunos_teste = [
 #print(alunos_teste[-1][0])
 
 #=========================================
+notas = []
+
+        
 def salvar_notas():
     lista = []
-    while True:
-        notas = []
-        lista.append(input("Digite o nome do aluno:\n"))
-        for i in range(4):
-            notas.append((float(input(f"Digita a {i + 1}º nota"))))
-        
-        tupla = tuple(notas)
-        lista.append(tupla)
-        print("Deseja, cadastrar outro aluno?\n")
-        refazer = int(input("DIGITE\n1 - SIM , 2 - NÃO"))
-        if refazer != 1:
-            break
-                    
+    
+    notas = []
+    lista.append(input("Digite o nome do aluno:\n"))
+    for i in range(4):
+        notas.append((float(input(f"Digita a {i + 1}º nota\n"))))
+    
+    tupla = tuple(notas)
+    lista.append(tupla)a
+               
     return lista
 
-lista = salvar_notas()
+print("Secretaria escolar\n")
+while True:
+    notas.append(salvar_notas())
+    opcao = int(input("Deseja salvar notas para um aluno? (1 - SIM / 2 - NÃO)\n"))
+    if opcao != 1:
+        break
 
-print(lista)
+print(notas)
