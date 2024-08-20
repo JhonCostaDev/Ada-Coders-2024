@@ -1,4 +1,8 @@
+link das aulas gravadas
+https://drive.google.com/drive/folders/1AYEdVRcvX49MxY4h3zrgfXcpOZnOuZXB
+
 link do colab
+
 https://colab.research.google.com/drive/1MQ7SFNtBWtDtLUvlSmuvn9LSlhiAb7vt?usp=sharing
 
 K-Nearest Neighbors - KNN
