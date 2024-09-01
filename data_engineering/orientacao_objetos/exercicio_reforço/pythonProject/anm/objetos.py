@@ -1,12 +1,14 @@
 from classes.pessoa import Pessoa
+from classes.conta import Conta
 
 amarildo = Pessoa('Amarildo', 12, 87.5, 1.72)
-print(amarildo)
-atividade_fisica = True
-
-amarildo.envelhecer(atividade_fisica)
-amarildo.envelhecer(atividade_fisica)
-
-print(amarildo)
+#print(amarildo)
+#
 
 #print(amarildo)
+
+#print(amarildo)
+c1 = Conta('12331351','amarildo')
+c1.deposito()
+
+print(c1)

@@ -1,10 +1,12 @@
 class Pessoa:
+
+    # Construtor ==============================================
     def __init__(self, nome:str, idade:int, peso:float, altura:float) -> None:
         self._nome = nome
         self._idade = idade
         self._peso = peso
         self._altura = altura
-        self._atividade_fisica = False
+       
 
     # Modulos ==============================================
     def crescer(self) ->None:
@@ -19,19 +21,19 @@ class Pessoa:
         else:
             self.engordar() 
         
-
     def engordar(self) ->None:
-        self._peso += 2
+        if self._peso < 200: 
+            self._peso += 2
         
-
     def emagrecer(self) ->None:
-        self._peso -= 1.5
+        if self._peso > 35:
+            self._peso -= 1.5
     
     def atividade_fisica(self):
         self._atividade_fisica = True
 
 
-    #getters ==============================================
+    #Getters ==============================================
     @property
     def nome(self)->str:
         return self._nome
@@ -58,13 +60,14 @@ class Pessoa:
     def update_altura(self, nova_altura)->None:
         self._altura = nova_altura
 
+    # Metodo magico para resumo de informacoes
     def __repr__(self) -> str:
         return f'''
 Nome: {self._nome}
 Idade: {self._idade}
 Peso: {self._peso}
 Altura: {self._altura}
-Atividade Fisica: {self._atividade_fisica}
+
 '''
 
 
