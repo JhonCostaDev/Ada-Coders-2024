@@ -21,8 +21,10 @@ class Conta:
                    return valor
            except ValueError:
                 print('Valor incorreto, Digite um número maior que zero.')
-
+    
     def deposito(self):
+    #TODO: Verificar pq esta permitindo sacar sem saldo
+    #TODO: implementar banco dados txt ou .csv para armazenar valor em conta
         valor = self.verificar_valor()
         self._saldo += valor
         print(f'Deposito no valor de R${valor} realizado com sucesso')
@@ -33,6 +35,7 @@ class Conta:
             return 'Transacao Recusada\nSaldo insuficiente!'
         else:
             self._saldo -= valor
+    
     # Getters
 
     def num_conta(self) -> str:
