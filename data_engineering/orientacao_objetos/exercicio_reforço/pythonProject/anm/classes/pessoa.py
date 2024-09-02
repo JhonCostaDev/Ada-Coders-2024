@@ -12,7 +12,9 @@ class Pessoa:
     def crescer(self) ->None:
         if self._idade < 21:
             self._altura += 0.5
-    
+
+    # No método envelhecer, eu inseri uma variável com valor padrão False, onde os métodos engordar e emagrecer
+    # serão acionador de acordo com a entrada dessa variável.
     def envelhecer(self, atividade_fisica=False) ->None:
         self._idade += 1
         self.crescer()
@@ -28,10 +30,6 @@ class Pessoa:
     def emagrecer(self) ->None:
         if self._peso > 35:
             self._peso -= 1.5
-    
-    def atividade_fisica(self):
-        self._atividade_fisica = True
-
 
     #Getters ==============================================
     @property
@@ -51,16 +49,23 @@ class Pessoa:
         return self._altura
     
     #Setters ==============================================
+    @nome.setter
+    def nome(self, novo_nome):
+        self._nome = novo_nome
 
     @idade.setter
-    def update_idade(self, nova_idade)->None:
+    def idade(self, nova_idade)->None:
         self._idade = nova_idade
 
+    @peso.setter
+    def peso(self, novo_peso):
+        self._peso = novo_peso
+
     @altura.setter
-    def update_altura(self, nova_altura)->None:
+    def altura(self, nova_altura)->None:
         self._altura = nova_altura
 
-    # Metodo magico para resumo de informacoes
+    # Método mágico para resumo de informações
     def __repr__(self) -> str:
         return f'''
 Nome: {self._nome}

@@ -19,9 +19,9 @@ class Tamagushi:
         else:
             return 'Bom'
 
-    # Sei que não foi pedido, mas crie esses métodos para modificar os atributos que determinarão o humor do Tamagushi.
+    # Sei que não foi pedido, mas criei esses métodos para modificar os atributos que determinarão o humor do Tamagushi.
     # Atividades que mudarão os atributos do Tamagushi
-    # a variável (atributos_válidos) controlará o range dos atributos para que não ultapassem os limites.
+    # a variável (atributos_válidos) controlará o range dos atributos para que não ultrapassem  os limites.
     def comer(self):
         atributos_validos = self._saude and self._fome  >= 0 and self._saude and self._fome  <= 5
         if atributos_validos:
@@ -47,7 +47,7 @@ class Tamagushi:
             self._saude += 1.2
 
 
-    #Getters
+    #Getters =======================================================
     
     @property
     def nome(self) -> str:
@@ -65,7 +65,7 @@ class Tamagushi:
     def idade(self) -> int:
         return self._idade
     
-    # Setters
+    # Setters =======================================================
     @nome.setter
     def nome(self, novo_nome):
         self._nome = novo_nome
@@ -82,6 +82,7 @@ class Tamagushi:
     def idade(self, nova_idade):
         self._idade = nova_idade
 
+    # == == == == == == == == == == == == == == == == == == == == == == == == == == == =
     def __repr__(self):
         return f'''
         Nome: {self._nome}
