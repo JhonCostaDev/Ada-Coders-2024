@@ -4,10 +4,7 @@ class Conta:
         self._cliente = cliente
         self._saldo = saldo
 
-
-    # metodos
-    def alterar_nome_cliente(self, novo_nome):
-        self._cliente = novo_nome
+    # Métodos
     
     def verificar_valor(self) -> float:
         while True:
@@ -37,17 +34,22 @@ class Conta:
             self._saldo -= valor
     
     # Getters
-
+    @property
     def num_conta(self) -> str:
         return self._num_conta
-    
+
+    @property
     def cliente(self)->str:
         return self._cliente
-    
+
+    @property
     def saldo(self) -> float:
         return self._saldo
     
     # Setters
+    @cliente.setter
+    def cliente(self, novo_nome):
+        self._cliente = novo_nome
 
     #
     def __repr__(self) -> str:
