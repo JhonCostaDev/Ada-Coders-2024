@@ -1,4 +1,4 @@
-def validar_entrada(numero):
+#def validar_entrada(numero):
     
 def menu():
     print(f'''
@@ -11,6 +11,6 @@ def menu():
 |                    0. FINALIZAR                       |
 =========================================================                    
 ''')
-    opcao = int(input)
+    opcao = int(input('Digite uma opção\n'))
 
 menu()
