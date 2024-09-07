@@ -11,3 +11,5 @@ for chave in dicio.keys():
         print('tem')
     else:
         print('nao tem')
+# %%
+

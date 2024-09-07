@@ -21,6 +21,10 @@ class Produto:
     @nome.setter
     def nome(self, update_nome):
         self._nome = update_nome
+        
+    @quantidade.setter
+    def quantidade(self, update_quantidade):
+        self._quantidade += update_quantidade
 
     @valor.setter
     def valor(self, update_valor):
@@ -28,7 +32,7 @@ class Produto:
 
     def __repr__(self) -> str:
         return f"""
-Produto: {self._nome}
+Produto: {self._nome.upper()}
 Quantidade: {self._quantidade}
 Valor: {self._valor}
 """
