@@ -12,16 +12,12 @@ class Estoque:
             for chave, valor in self.estoque.items():
                 print(f'{chave} : {valor}')
 
-    def adicionar_item(self, produto):
+    #def adicionar_item(self, produto):
         # for chave in self.estoque.keys():
         #     if chave == produto:
         #         chave.quantidade = valor
-        nome = 
-        quantidade = 
-        valor =
-        novo_item = Produto(nome, quantidade, valor)
+        # nome = 
+        # quantidade = 
+        # valor =
+        # novo_item = Produto(nome, quantidade, valor)
         
-            
-                
-                
-                
