@@ -39,20 +39,15 @@ def validar_valor_real():
             
 # a = meu_validar_real()
 # print(a)
-
+#%%
 frutas = {
     "maçã": [3.50, 10],  # [preço, quantidade]
     "banana": [2.00, 20],
     "laranja": [4.00, 15],
     "uva": [5.00, 8]
 }
-# print('___________________________________________________')
-# print("|    Produto  |   Valor unitario  |   Quantidade  |")
-# for chave, valor in frutas.items():
-#     print(f'|{chave}         |       {valor[0]}         |    {valor[1]}         |\n---------------------------------------------------')
-    
-# print('___________________________________________________\n')
 
+frutas['banana prata'] = frutas.pop('banana')
 def imprimir_tabela(dicionario):
     # Cabeçalhos
     print("-" * 35)
@@ -63,4 +58,10 @@ def imprimir_tabela(dicionario):
     for fruta, detalhes in dicionario.items():
         print(f"| {fruta:<10}| {detalhes[0]:<10}| {detalhes[1]:<10}|")
         
-imprimir_tabela(frutas)
+def salvar(dicionario, nome_arquivo):
+    with open(nome_arquivo, 'w') as arquivo:
+        for chave, valor in dicionario.items():
+            arquivo.write(f'{chave}: {valor}\n')
+            
+salvar(frutas, 'frutas.txt')
+# %%

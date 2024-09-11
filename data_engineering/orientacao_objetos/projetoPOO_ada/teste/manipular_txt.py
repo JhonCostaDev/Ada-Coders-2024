@@ -12,5 +12,5 @@ def ler_arquivo(arquivo):
         linhas = file.readlines() # readlines com s no final
         produtos = [linha.strip().split(',') for linha in linhas]
     return produtos
-lista = ler_arquivo('teste.txt')
+lista = ler_arquivo('frutas.txt')
 print(lista)
