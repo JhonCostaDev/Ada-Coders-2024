@@ -1,6 +1,5 @@
 import os
 import time
-from classes.validacao import *
 from classes.estoque import Estoque
 
 def limpar_tela()-> None:
