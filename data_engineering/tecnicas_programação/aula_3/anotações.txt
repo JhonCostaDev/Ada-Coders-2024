@@ -1,0 +1,23 @@
+
+metodos para reforçar em numpy
+
+* reshape
+* flatten
+* ravel
+* max
+* argmax
+* min
+* argmin
+* sum
+* mean
+* std
+* argsort
+* sort
+* astype
+
+
+* mascara booleana
+
+
+
+iniciar pandas 
