@@ -14,7 +14,7 @@ metodos para reforçar em numpy
 * argsort
 * sort
 * astype
-
+feito
 
 * mascara booleana
 

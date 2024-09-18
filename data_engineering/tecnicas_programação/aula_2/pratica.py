@@ -252,3 +252,19 @@ print(f"Inverso: \n{1 / array}\n")
 
 
 # %%
+# RELEMBRANDO
+#List Comprehension
+
+
+quadrados = []
+for num in range(11):
+    if num % 2 == 0:
+        quadrados.append(num * num)
+        
+quadrados
+# %%
+#######################################
+
+quadrados_comprehension = [num * num for num in range(11) if num % 2 == 0]
+print(quadrados_comprehension)
+# %%
