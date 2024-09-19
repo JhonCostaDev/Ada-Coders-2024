@@ -1,0 +1,10 @@
+dictionary = {'Alunos': ['Sandro', 'Rafael', 'Tiago', 'André', 'Camila', 'Teo', 'Carlos', 'Juca', 'Carla'],
+              'Notas': [8, 10, 9.5, 7.5, 9.5, 10, 5, 6.5, 10]}
+df = pd.DataFrame(dictionary)
+
+exercicio
+
+
+https://www.kaggle.com/datasets
+pandas profiling
+sweetViz

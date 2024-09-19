@@ -5,9 +5,21 @@
 #%%
 import numpy as np
 lista = [num for num in range(20)]
-print(lista)
+print("==== Lista ====:\n", lista)
 
-matriz = np.array(lista)
+array = np.array(lista)
+print("\n==== Array ====:\n", array)
+
+matriz = array.reshape((4,5))
+print("\n==== Matriz ====:\n", matriz)
+
+# %%
+'''
+2 - Construa um array unidimensional com 30 números inteiros escolhidos de forma randômica no intervalo entre 0 e 20. Reformate o array para que se torne uma matriz A com 5 linhas e 6 colunas
+'''
+array = np.linspace(0, 20, 30)
+array
+
+matriz = array.reshape((5, 6))
 matriz
-
 # %%
