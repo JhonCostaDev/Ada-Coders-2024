@@ -23,3 +23,13 @@ array
 matriz = array.reshape((5, 6))
 matriz
 # %%
+import numpy as np
+array = np.arange(1, 201).reshape((20, 10))
+# linhas
+array[[1, 5, 8],:]
+# colunas
+array[:,[1, 5, 8]]
+
+# %%
+array[::2]
+# %%
