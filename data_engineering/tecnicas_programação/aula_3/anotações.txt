@@ -1,20 +1,20 @@
 
 metodos para reforçar em numpy
 
-* reshape
-* flatten
-* ravel
-* max
-* argmax
-* min
-* argmin
-* sum
-* mean
-* std
-* argsort
-* sort
-* astype
-feito
+* reshape feito
+* flatten feito
+* ravel feito
+* max feito
+* argmax feito
+* min feito
+* argmin feito
+* sum feito
+* mean feito
+* std feito
+* argsort feito
+* sort feito
+* astype feito
+feito feito
 
 * mascara booleana
 
